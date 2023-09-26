@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Date and Time</title>
+</head>
+<body>
+    <h1>Current Date and Time</h1>
+
+    <!-- Button to fetch the date -->
+    <button id="dateButton">Show Date</button>
+
+    <!-- Button to fetch the time -->
+    <button id="timeButton">Show Time</button>
+
+    <p id="result"></p>
+
+    <script>
+        // Function to format the date as "07/march/2023"
+        function formatDate(date) {
+        const day = date.getDate().toString().padStart(2, '0'); // Get day and pad with leading zero if necessary
+        const month = date.toLocaleString('default', { month: 'long' }); // Get month in long format
+        const year = date.getFullYear(); // Get year
+
+    return `${day}/${month}/${year}`;
+}
+
+
+        // Function to fetch the current date
+        document.getElementById("dateButton").addEventListener("click", function() {
+            const currentDate = new Date();
+            const formattedDate = formatDate(currentDate);
+            document.getElementById("result").textContent = "Current Date: " + formattedDate;
+        });
+
+        // Function to fetch the current time
+        document.getElementById("timeButton").addEventListener("click", function() {
+            const currentTime = new Date();
+            const formattedTime = currentTime.toString();
+            document.getElementById("result").textContent = "Current Time: " + formattedTime;
+        });
+    </script>
+</body>
+</html>

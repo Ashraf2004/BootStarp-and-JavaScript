@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication and Division Calculator</title>
+  <style>
+    input, label, button{
+        margin-right: 5px;
+        margin-top: 5px;   
+    }
+  </style>
+</head>
+<body>
+  <h1>Multiplication and Division Calculator</h1>
+  <label for="num1">1st Number:</label>
+  <input type="number" id="num1" placeholder="Enter number 1">
+  <br>
+  <label for="num2">2nd Number:</label>
+  <input type="number" id="num2" placeholder="Enter number 2">
+  <br>
+  <button onclick="calculate1()">Multiply</button>
+  <button onclick="calculate2()">Divide</button>
+  <p id="multiplicationResult"></p>
+  <p id="divisionResult"></p>
+  <script>
+    function calculate1() {
+      let num1 = parseFloat(document.getElementById("num1").value);
+      let num2 = parseFloat(document.getElementById("num2").value);
+      let multiplicationResult = num1 * num2;
+      document.getElementById("multiplicationResult").innerHTML = "Multiplication Result: " + multiplicationResult;
+    }
+    function calculate2(){
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let divisionResult = num1 / num2;
+        document.getElementById("divisionResult").innerHTML = "Division Result: " + divisionResult;
+    }
+  </script>
+</body>
+</html>

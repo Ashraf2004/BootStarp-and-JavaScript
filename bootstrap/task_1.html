@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        .column {
+            float: left;
+            padding: 10px 10px 10px 10px;
+        }
+        .column.side {
+            width: 15%;
+            padding-bottom: 700px;
+        }
+        .column.middle {
+            width: 85%;
+            
+        }
+    #contentTextarea {
+      width: 100%;
+      height: calc(100vh - 50px); 
+      text-align: center;
+      border: none;
+    }
+    #frame2 {
+      background-color: rgb(106, 105, 105);
+      height: calc(100vh - 50px); 
+    }
+    
+    #this {
+      color: white;
+    }
+    </style>
+</head>
+
+<body>
+
+    <header class="bg-info pt-2 pb-2 ">
+        <div class="text-center" style="font-size: 20px; font-weight: 100px;">Ethnus layout</div>
+    </header>
+
+    <nav class="navbar bg-secondary pt-1 pb-1">
+
+        <div>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link me-5" style="color: white;" href="#">HOME</a></li>
+                <li class="nav-item"><a class="nav-link me-5" style="color: white;" href="#">MENU</a></li>
+                <li class="nav-item"><a class="nav-link me-5" style="color: white;" href="#">ABOUT</a></li>
+                <li class="nav-item"><a class="nav-link me-5" style="color: white;" href="#">CONTACT</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav justify-content-end">
+                <li class="nav-item"><a class="nav-link me-3 " style="color: white;" href="#">SIGNUP</a></li>
+                <li class="nav-item"><a class="nav-link me-3 " style="color: white;" href="#">LOGIN</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <main>
+      <div class="container-fluid"> 
+        <div class="row">
+          <div class="col-md-10"> 
+            <center>
+              <textarea id="contentTextarea" placeholder="Write your content here."></textarea>
+            </center>
+          </div>
+          <div class="col-md-2" id="frame2"> 
+            <center><p id="this">This is</p></center>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+</body>
+</html>

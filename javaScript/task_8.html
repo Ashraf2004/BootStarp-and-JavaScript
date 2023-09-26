@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Add some basic styling for the table */
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+        .container{
+        width: 50%;
+        background-color: #e0cf78;
+        background-image: linear-gradient(315deg, #f5de69 0%, #e368b6 74%);;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .inputs {
+            width: 80%;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        input, select, textarea {
+            width: 98.5%;
+        }
+         input[type="radio"], input[type="checkbox"]{
+            display: inline-block;
+            width: fit-content;
+           
+        }
+        button{
+            background-color: red;
+            border-radius: 40%;
+        }
+        #msg, #msg2, #msg3, #msg4, #msg5, #msg6, #msg7, #msg8, #msg9{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center><div class="container">
+    <h2>Registration Form</h2>
+    <table>
+        <tr>
+            <td><label for="first-name">First Name</label></td>
+            <td class="inputs"><input type="text" id="i1"  name="first-name" onkeyup="checkStrength()"></td>
+            <td><span id="msg">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="last-name">Last Name</label></td>
+            <td><input type="text" id="i2" name="last-name" onkeyup="checkStrength2()"></td>
+            <td><span id="msg2">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" id="i3" name="email" onkeyup="checkStrength3()"></td>
+            <td><span id="msg3">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" id="i4" name="password" onkeyup="checkStrength4()"></td>
+            <td><span id="msg4">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="re-password">Re-enter Password</label></td>
+            <td><input type="password" id="i5" name="re-password" onkeyup="checkStrength5()"></td>
+            <td><span id="msg5">Poor or Mismatch</span></td>
+        </tr>
+        <tr>
+            <td rowspan="2"><label for="gender">Gender:</label></td>
+            <td>
+                <input type="radio" name="gender" value="male">Male
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="gender" value="Female">Female
+            </td>
+        </tr>
+        <tr>
+            <td><label for="age">Age</label></td>
+            <td><input type="number" id="i6" name="age" onkeyup="checkStrength6()"></td>
+            <td><span id="msg6">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone Number</label></td>
+            <td><input type="number" id="i7" name="phone" onkeyup="checkStrength7()"></td>
+            <td><span id="msg7">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="address">Address</label></td>
+            <td><textarea id="i8" rows="10" cols="20" onkeyup="checkStrength8()" ></textarea></td>
+            <td><span id="msg8">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="state">State</label></td>
+            <td><input type="text" id="i9" name="state" onkeyup="checkStrength9()" ></td>
+            <td><span id="msg9">Poor</span></td>
+        </tr>
+        <tr>
+            <td><label for="country">Country</label></td>
+            <td><select name="country" id="country" style="width: fit-content;">
+                <option value="0">Choose your country</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label for="languages">Languages known</label></td>
+            <td>
+            <input type="checkbox" id="languages" name="languages">English 
+            <input type="checkbox" id="languages" name="languages">Kannada 
+            <input type="checkbox" id="languages" name="languages">Hindi 
+            <input type="checkbox" id="languages" name="languages">Telugu 
+        </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <input type="checkbox" id="check" name="check" checked>Hereby I declare all the given details are true
+        </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right;">Log in to <a href="https://ethnus.com/">Ethnus</a> website</td>
+        </tr>
+    </table>
+    <br>
+    <center><button type="submit">Register</button></center>
+</div></center>
+<script>
+    function checkStrength()
+    {
+        var pwd = document.getElementById("i1").value;
+        if(pwd.length <= 0)
+        {
+            document.getElementById("msg").innerText = "Poor";
+            document.getElementById("msg").style.color = "red";
+        }
+        else
+        {
+            document.getElementById("msg").innerText = "Good";
+            document.getElementById("msg").style.color = "green";
+            
+        }
+    }
+    function checkStrength2()
+    {
+        var pwd = document.getElementById("i2").value;
+        if(pwd.length <= 0)
+        {
+            document.getElementById("msg2").innerText = "Poor";
+            document.getElementById("msg2").style.color = "red";
+        }
+        else
+        {
+            document.getElementById("msg2").innerText = "Good";
+            document.getElementById("msg2").style.color = "green";
+            
+        }
+    }
+    function checkStrength3()
+    {
+        const emailInput = document.getElementById("i3");
+        
+        // Regular expression pattern for a basic email validation
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        const email = emailInput.value;
+
+        if (emailPattern.test(email)) {
+            document.getElementById("msg3").innerText = "valid";
+            document.getElementById("msg3").style.color = "green";
+        } else {
+            document.getElementById("msg3").innerText = "Poor";
+            document.getElementById("msg3").style.color = "red";
+        }
+    }
+    function checkStrength4()
+    {
+        const password = document.getElementById("i4").value;
+        if (password.length < 8) {
+            document.getElementById("msg4").innerText = "Poor";
+            document.getElementById("msg4").style.color = "red";
+        } else {
+            document.getElementById("msg4").innerText = "valid";
+            document.getElementById("msg4").style.color = "green";
+        }
+    }
+    function checkStrength5()
+    {
+        const password = document.getElementById("i4").value;
+        const rePassword = document.getElementById("i5").value;
+
+        if (password === rePassword) {
+            document.getElementById("msg5").innerText = "Good";
+            document.getElementById("msg5").style.color = "green";
+        } else {
+            document.getElementById("msg5").innerText = "Poor or Mismatch";
+            document.getElementById("msg5").style.color = "red";
+        }
+    }
+    function checkStrength6()
+    {
+        const ageInput = document.getElementById("i6");
+        const age = parseInt(ageInput.value);
+        if (!isNaN(age)) {
+            document.getElementById("msg6").innerText = "Valid";
+            document.getElementById("msg6").style.color = "green";
+        } else {
+            document.getElementById("msg6").innerText = "Poor";
+            document.getElementById("msg6").style.color = "red";
+        }
+    }
+    function checkStrength7()
+    {
+        const phoneInput = document.getElementById("i7");
+        const phonePattern = /^\d{10}$/; // Assumes a 10-digit phone number
+
+        if (phonePattern.test(phoneInput.value)) {
+            document.getElementById("msg7").innerText = "valid";
+            document.getElementById("msg7").style.color = "green";
+        } else {
+            document.getElementById("msg7").innerText = "Poor";
+            document.getElementById("msg7").style.color = "red";
+        }
+    }
+    function checkStrength8()
+    {
+        var pwd = document.getElementById("i8").value;
+        if(pwd.length <= 0)
+        {
+            document.getElementById("msg8").innerText = "Poor";
+            document.getElementById("msg8").style.color = "red";
+        }
+        else
+        {
+            document.getElementById("msg8").innerText = "Good";
+            document.getElementById("msg8").style.color = "green";
+            
+        }
+    }
+    function checkStrength9()
+    {
+        var pwd = document.getElementById("i9").value;
+        if(pwd.length <= 0)
+        {
+            document.getElementById("msg9").innerText = "Poor";
+            document.getElementById("msg9").style.color = "red";
+        }
+        else
+        {
+            document.getElementById("msg9").innerText = "Good";
+            document.getElementById("msg9").style.color = "green";
+            
+        }
+    }
+
+</script>
+</body>
+</html>
