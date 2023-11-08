@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Feedback</title>
     <style>
         body {
             display: flex;
@@ -49,11 +49,7 @@
         <input type="text" id="i2" name="email" onkeyup="checkmail()">
         <span id="msg2">A valid email address is required</span>
         <br>
-        <label for="website">Website:</label>
-        <input type="text" id="i3" name="website" onkeyup="checkweb()">
-        <span id="msg3">A valid URL is required</span>
-        <br>
-        <label for="message">Message:</label>
+        <label for="message">Feedback:</label>
         <textarea id="i4" rows="10" cols="20" onkeyup="checkmsg()"></textarea>
         <span id="msg4">This field is required</span>
         <br>
@@ -86,18 +82,7 @@
             }
         }
 
-        function checkweb() {
-            var website = document.getElementById("i3").value;
-            var msg = document.getElementById("msg3");
-            var websitePattern = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-zA-Z0-9]+\.[a-zA-Z]{2,5}(\/)?$/
-            if (!website.match(websitePattern)) {
-                msg.textContent = "A valid URL is required";
-                document.getElementById("i3").classList.add("error");
-            } else {
-                msg.textContent = "";
-                document.getElementById("i3").classList.remove("error");
-            }
-        }
+       
 
         function checkmsg() {
             var message = document.getElementById("i4").value;
